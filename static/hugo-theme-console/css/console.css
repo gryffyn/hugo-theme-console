@@ -154,10 +154,7 @@ strong {
 }
 
 figure {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin: 15px 60px;
 }
 
 .footer {
@@ -207,7 +204,7 @@ figure {
 .posts-list .date {
     display: inline-block;
     position: absolute;
-    left: 0px;
+    left: 0;
     width: 150px;
     z-index: 400;
     font-weight: bold;
@@ -244,10 +241,7 @@ figure {
     }
 
     figure {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        margin-left: 30px;
-        margin-right: 30px;
+        margin: 5px 30px;
     }
 
     .posts-list {
