@@ -31,7 +31,7 @@
 }
 
 pre {
-    background-color: #2e2e33;
+    background-color: #1d1e20;
     border: 2px solid var(--global-font-color);
     padding-bottom: 0;
 }
@@ -61,8 +61,11 @@ code::after code::before {
     --global-line-height: 1.6em;
     --page-width: 70em;
     --display-h1-decoration: 1;
-    --code-bg-color: #2e2e33;
+    --code-bg-color: #1d1e20;
     --font-color: #dadadb;
+    --primary-color: #f5a8b8;
+    --invert-font-color: #1d1e20;
+    /* --secondary-color: #5bcefb; */
 }
 
 @media only screen and (max-width: 850px) {
