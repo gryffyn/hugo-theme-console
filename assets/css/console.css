@@ -3,7 +3,6 @@
     src: url('../font/SourceCodePro-Regular.ttf') format('truetype');
     font-style: normal;
     font-weight: 400;
-    text-rendering: optimizeLegibility;
 }
 
 @font-face {
@@ -11,7 +10,6 @@
     src: url('../font/SourceCodePro-Italic.ttf') format('truetype');
     font-style: italic;
     font-weight: 400;
-    text-rendering: optimizeLegibility;
 }
 
 @font-face {
@@ -19,7 +17,6 @@
     src: url('../font/SourceCodePro-Bold.ttf') format('truetype');
     font-style: normal;
     font-weight: 700;
-    text-rendering: optimizeLegibility;
 }
 
 @font-face {
@@ -27,24 +24,51 @@
     src: url('../font/SourceCodePro-BoldItalic.ttf') format('truetype');
     font-style: italic;
     font-weight: 700;
-    text-rendering: optimizeLegibility;
+}
+
+.highlight pre {
+    margin: 0;
+}
+
+pre {
+    background-color: #2e2e33;
+    border: 2px solid var(--global-font-color);
+    padding-bottom: 0;
+}
+
+pre code {
+    overflow: auto;
+    font-size: 14px;
+}
+
+.post code {
+    padding: 4px 6px;
+}
+
+pre code::after code::before {
+    content: unset;
+}
+
+code::after code::before {
+    content: unset;
 }
 
 :root {
-    --global-font-size: 16px;
-    --global-font-color: #444;
+    --global-font-size: 18px;
+    --global-font-color: #dadadb;
     --mono-font-stack: Source Code Pro, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
     --font-stack: Source Code Pro, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
     --global-line-height: 1.6em;
     --page-width: 70em;
     --display-h1-decoration: 1;
-    --code-bg-color: #fff;
+    --code-bg-color: #2e2e33;
+    --font-color: #dadadb;
 }
 
 @media only screen and (max-width: 850px) {
     :root {
         --global-font-size: 14px;
-        --global-font-color: #444;
+        --global-font-color: #dadadb;
         --global-line-height: 1.6em;
         --page-width: 70em;
     }
@@ -73,7 +97,7 @@
 body {
     font-family: var(--font-stack);
     font-size: var(--global-font-size);
-    background-color: #fff;
+    background-color: #1d1e20;
     margin-bottom: 75px;
 }
 
@@ -89,12 +113,21 @@ h6,
 .h4,
 .h5,
 .h6 {
+    color: #dadadb;
     font-family: var(--font-stack);
     clear: both;
 }
 
 h1 {
     margin-bottom: 150px;
+}
+
+.terminal code {
+    font-size: 14px;
+}
+
+h1::after {
+    pointer-events: none;
 }
 
 .content-column-content p,
@@ -146,7 +179,7 @@ strong {
 }
 
 .logo {
-    font-weight: normal;
+    font-weight: bold;
 }
 
 .terminal-menu li {
@@ -168,11 +201,9 @@ figure {
 .image-grid {
     display: grid;
     grid-template-rows: auto;
-    display: grid;
     grid-gap: 1em;
-    grid-template-rows: auto;
     grid-template-columns: repeat(auto-fit,
-            minmax(calc(var(--page-width) / 4), 1fr));
+            minmax(calc(var(--page-width) / 5), 1fr));
 }
 
 .terminal-prompt::after {
@@ -192,7 +223,7 @@ figure {
 
 .posts-list {
     position: relative;
-    padding-left: 150px;
+    padding-left: 120px;
     top: 0;
     margin-top: 21px;
 }
@@ -259,7 +290,7 @@ figure {
         display: inline-block;
         position: absolute;
         left: 0px;
-        width: 150px;
+        width: 120px;
         z-index: 400;
         font-weight: bold;
         padding-top: 3px;
