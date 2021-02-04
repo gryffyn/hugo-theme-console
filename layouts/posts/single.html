@@ -5,7 +5,8 @@
 <div class="post-meta">
     {{ .PublishDate.Format "Jan. 2, 2006" }}
     {{ with .Params.Description }}
-    // {{ . }}
+    <span style="color: var(--primary-color);font-weight: bold">//</span>
+    {{ . }}
     {{ end }}
 </div>
 </br>
