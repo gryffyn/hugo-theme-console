@@ -1,5 +1,11 @@
 {{ define "main" }}
-{{ partial "index-about" . }}
-{{ partial "index-posts" . }}
-{{ partial "index-photos" . }}
+<div class="index-about">
+    {{ partial "index-about" . }}
+</div>
+<div class="index-posts">
+    {{ partial "index-posts" . }}
+</div>
+<div class="index-photos">
+    {{ partial "index-photos" . }}
+</div>
 {{ end }}

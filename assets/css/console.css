@@ -31,18 +31,24 @@
 }
 
 pre {
-    background-color: #1d1e20;
-    border: 2px solid var(--global-font-color);
+    border:0;
     padding-bottom: 0;
+    background-color: #3a3b40;
 }
 
 pre code {
     overflow: auto;
     font-size: 14px;
+    margin: 0 0 2px 0;
+    background-color: #3a3b40;
 }
 
 .post code {
     padding: 4px 6px;
+}
+
+code {
+    background-color: #3a3b40;
 }
 
 pre code::after code::before {
@@ -58,8 +64,8 @@ code::after code::before {
     --global-font-color: #dadadb;
     --mono-font-stack: Source Code Pro, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
     --font-stack: Source Code Pro, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-    --global-line-height: 1.6em;
-    --page-width: 70em;
+    --global-line-height: 1.4em;
+    --page-width: 64em;
     --display-h1-decoration: 1;
     --code-bg-color: #1d1e20;
     --font-color: #dadadb;
@@ -98,7 +104,7 @@ code::after code::before {
 }
 
 body {
-    font-family: var(--font-stack);
+    font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
     font-size: var(--global-font-size);
     background-color: #1d1e20;
     margin-bottom: 75px;
@@ -122,15 +128,41 @@ h6,
 }
 
 h1 {
-    margin-bottom: 150px;
+    padding: calc(var(--global-space)) 0 calc(var(--global-space));
+    margin-bottom: 120px;
+    text-decoration: underline var(--primary-color);
 }
 
 .terminal code {
     font-size: 14px;
+    padding: 4px 6px;
+}
+
+.terminal-logo {
+    flex-basis: 60em;
+}
+
+.post-title h1 {
+    font-size: 36px;
+}
+
+.post-content h1 {
+    font-size: 32px;
+}
+
+.index-about h1,
+.index-photos h1,
+.index-posts h1 {
+    font-size: 36px;
+}
+
+.post h1 {
+    font-size: 18px;
 }
 
 h1::after {
     pointer-events: none;
+    content: "";
 }
 
 .content-column-content p,
@@ -154,23 +186,6 @@ h1::after {
 
 .content-column-content .command {
     color: #aaa;
-}
-
-p.social a {
-    margin: 0 0 10px 0;
-    color: #fff;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border: none;
-    line-height: 30px;
-    font-size: 25px;
-    text-align: center;
-    vertical-align: bottom;
-    color: #999999;
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
 }
 
 .active a {
@@ -209,12 +224,6 @@ figure {
             minmax(calc(var(--page-width) / 5), 1fr));
 }
 
-.terminal-prompt::after {
-    -webkit-animation: cursor 1s infinite;
-    animation: cursor 1s infinite;
-    width: 10px;
-}
-
 .terminal-prompt::before {
     content: none;
 }
@@ -226,7 +235,7 @@ figure {
 
 .posts-list {
     position: relative;
-    padding-left: 120px;
+    padding-left: 150px;
     top: 0;
     margin-top: 21px;
 }
@@ -239,7 +248,7 @@ figure {
     display: inline-block;
     position: absolute;
     left: 0;
-    width: 150px;
+    width: auto;
     z-index: 400;
     font-weight: bold;
     padding-top: 3px;

@@ -1,14 +1,15 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-
-{{ .PublishDate.Format "Jan. 2, 2006" }}
-{{ with .Params.linkedin }}
-    // <a href="{{ . }}">Linkedin</a>
-{{ end }}
-{{ with .Params.twitter }}
-    // <a href="{{ . }}">Twitter</a>
-{{ end }}
-<br/><br/>
-{{ .Content }}
-{{ template "_internal/disqus.html" . }}
+<div class="post-title">
+    <h1>{{ .Title }}</h1>
+</div>
+<div class="post-meta">
+    {{ .PublishDate.Format "Jan. 2, 2006" }}
+    {{ with .Params.Description }}
+    // {{ . }}
+    {{ end }}
+</div>
+</br>
+<div class="post-content">
+    {{ .Content }}
+</div>
 {{ end }}

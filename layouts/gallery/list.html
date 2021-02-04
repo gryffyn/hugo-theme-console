@@ -1,5 +1,7 @@
 {{ define "main" }}
-<h1>{{ .Page.Title }}</h1>
+<div class="post-title">
+    <h1>{{ .Page.Title }}</h1>
+</div>
 {{ .Content }}
 <div class="image-grid">
     {{ range sort .Data.Pages "Date" "desc" }}

@@ -1,14 +1,16 @@
 {{ define "main" }}
-<h1 class="post-title">
-    {{ .Title }}
-    {{- if .Draft }}<div class="entry-isdraft"><sup>&nbsp;&nbsp;[draft]</sup></div>{{- end }}
-</h1>
+<div class="post-title">
+    <h1>
+        {{ .Title }}
+        {{- if .Draft }}<div class="entry-isdraft"><sup>&nbsp;&nbsp;[draft]</sup></div>{{- end }}
+    </h1>
+</div>
 {{- if .Description }}
 <div class="post-description">
     {{ .Description }}
 </div>
 {{- end }}
 <div class="post-content">
-    {{ .Content }}
+    {{ partial "anchored-headings.html" .Content }}
 </div>
 {{ end }}
