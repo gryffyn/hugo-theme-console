@@ -30,15 +30,6 @@
     margin: 0;
 }
 
-.logo, blockquote, h1, ol, p, ul {
-    margin-bottom: 0;
-}
-
-p {
-    margin: unset;
-    margin-top: var(--global-line-height);
-}
-
 pre {
     border:0;
     padding-bottom: 0;
