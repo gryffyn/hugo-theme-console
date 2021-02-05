@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
+    <meta name="author" content="{{ (partial "author.html" . ) }}">
+    <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}" />
     {{ $css := resources.Get "css/terminal-0.7.2.css" }}
     {{ $style := $css | resources.Minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink | absURL }}" integrity="{{ $style.Data.Integrity }}">
@@ -22,6 +24,8 @@
     ` | safeHTML }}
 
     {{- partial "favicon.html" . -}}
+    <!-- Generator -->
+    {{- hugo.Generator }}
     {{ with .OutputFormats.Get "RSS" }}
       {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />` .Permalink .Rel .MediaType.Type $.Site.Title | safeHTML }}
     {{ end }}
