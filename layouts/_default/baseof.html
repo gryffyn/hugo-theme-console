@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ .Site.Title }}{{ $url := urls.Parse .Page.Permalink }}{{ $url.Path }}</title>
     {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     {{ $css := resources.Get "css/terminal-0.7.2.min.css" }}
     {{ $style := $css | resources.Minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink | absURL }}" integrity="{{ $style.Data.Integrity }}">
-    {{ $css := resources.Get "css/console.css" }}
+    {{ $css := resources.Get "css/syntax.css" }}
     {{ $style := $css | resources.Minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink | absURL }}" integrity="{{ $style.Data.Integrity }}">
-    {{ $css := resources.Get "css/syntax.css" }}
+    {{ $css := resources.Get "css/console.css" }}
     {{ $style := $css | resources.Minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink | absURL }}" integrity="{{ $style.Data.Integrity }}">
     {{ `
@@ -41,7 +41,7 @@
             <div class="logo">
               {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
               {{ $.Scratch.Add "path" .Site.BaseURL }}
-              <a href="{{ .Site.BaseURL }}" class="no-style {{ with .Site.Params.TitleCutting }}site-name{{ end }}">{{ .Site.Title }}</a>/{{ range $index, $element := split $url "/" }}{{ $.Scratch.Add "path" $element }}{{ if ne $element "" }}<a href='{{ $.Scratch.Get "path" | absURL }}'>{{ . }}</a>/{{ $.Scratch.Add "path" "/" }}{{ end }}{{ end }}</div></header>
+                <a href="{{ .Site.BaseURL }}" class="no-style {{ with .Site.Params.TitleCutting }}site-name{{ end }}">{{ .Site.Title }}</a>/{{ range $index, $element := split $url "/" }}{{ $.Scratch.Add "path" $element }}{{ if ne $element "" }}<a class="title-loc" href='{{ $.Scratch.Get "path" | absURL }}'>{{ . }}</a><span class="title-sep">/</span>{{ $.Scratch.Add "path" "/" }}{{ end }}{{ end }}</div></header>
           <nav class="terminal-menu">
             <ul vocab="https://schema.org/" typeof="BreadcrumbList">
                 {{ range .Site.Params.navlinks }}

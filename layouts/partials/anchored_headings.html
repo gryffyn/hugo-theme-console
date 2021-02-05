@@ -1,0 +1,2 @@
+<!-- https://github.com/adityatelange/hugo-PaperMod/blob/master/layouts/partials/anchored_headings.html -->
+{{ . | replaceRE "(<h[1-6] id=\"([^\"]+)\".+)(</h[1-6]+>)" "${1}<span> </span><a class=\"anchor\" href=\"#${2}\">#</a>${3}" | safeHTML }}

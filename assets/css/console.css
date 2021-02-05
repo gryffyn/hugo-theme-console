@@ -33,14 +33,14 @@
 pre {
     border:0;
     padding-bottom: 0;
-    background-color: #3a3b40;
+    background-color: var(--code-bg-color);
 }
 
 pre code {
     overflow: auto;
     font-size: 14px;
     margin: 0 0 2px 0;
-    background-color: #3a3b40;
+    background-color: var(--code-bg-color);
 }
 
 .post code {
@@ -48,7 +48,7 @@ pre code {
 }
 
 code {
-    background-color: #3a3b40;
+    background-color: var(--code-bg-color);
 }
 
 pre code::after code::before {
@@ -62,15 +62,16 @@ code::after code::before {
 :root {
     --global-font-size: 18px;
     --global-font-color: #dadadb;
+    --background-color: #1d1e20;
     --mono-font-stack: Source Code Pro, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
     --font-stack: Source Code Pro, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
     --global-line-height: 1.4em;
     --page-width: 64em;
     --display-h1-decoration: 1;
-    --code-bg-color: #1d1e20;
+    --code-bg-color: #2C2E31;
     --font-color: #dadadb;
     --primary-color: #f5a8b8;
-    --invert-font-color: #1d1e20;
+    --invert-font-color: var(--background-color);
     /* --secondary-color: #5bcefb; */
 }
 
@@ -78,7 +79,7 @@ code::after code::before {
     :root {
         --global-font-size: 14px;
         --global-font-color: #dadadb;
-        --global-line-height: 1.6em;
+        --global-line-height: 1.3em;
         --page-width: 70em;
     }
 }
@@ -106,7 +107,7 @@ code::after code::before {
 body {
     font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
     font-size: var(--global-font-size);
-    background-color: #1d1e20;
+    background-color: var(--background-color);
     margin-bottom: 75px;
 }
 
@@ -150,14 +151,24 @@ h1 {
     font-size: 32px;
 }
 
+.post-content h1 a,
+.post-content h2 a,
+.post-content h3 a,
+.post-content h4 a {
+    text-decoration: none;
+    position: relative;
+    left: -1px;
+    color: var(--secondary-color);
+}
+
+.post-meta {
+     color: var(--secondary-color);
+}
+
 .index-about h1,
 .index-photos h1,
 .index-posts h1 {
     font-size: 36px;
-}
-
-.post h1 {
-    font-size: 18px;
 }
 
 h1::after {
@@ -209,6 +220,7 @@ figure {
 }
 
 .footer {
+    font-size: 14px;
     clear: both;
     margin-top: 100px;
     padding-top: 10px;;
@@ -216,21 +228,8 @@ figure {
     color: var(--global-font-color);
 }
 
-.image-grid {
-    display: grid;
-    grid-template-rows: auto;
-    grid-gap: 1em;
-    grid-template-columns: repeat(auto-fit,
-            minmax(calc(var(--page-width) / 5), 1fr));
-}
-
 .terminal-prompt::before {
     content: none;
-}
-
-.gallery-image {
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .posts-list {
@@ -242,6 +241,8 @@ figure {
 
 .post h1 {
     padding-top: 0;
+    font-size: 18px;
+    text-decoration: none;
 }
 
 .posts-list .date {
@@ -256,8 +257,6 @@ figure {
 
 @media only screen and (max-width: 850px) {
     .site-name {
-        width: 2ch;
-        overflow: hidden;
         display: inline-block;
     }
 
@@ -277,6 +276,19 @@ figure {
 
     .terminal-menu li {
         margin-right: 20px;
+    }
+
+    .terminal-logo {
+        flex-basis: unset;
+    }
+
+    .terminal code {
+        padding: 2px 4px;
+    }
+
+    .title-sep,
+    .title-loc {
+        text-overflow: clip;
     }
 
     .logo {
