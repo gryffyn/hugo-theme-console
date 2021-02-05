@@ -67,7 +67,7 @@ a:hover {
 em {
     font-size: var(--global-font-size);
     font-style: italic;
-    font-family: var(--font-stack);
+    font-family: inherit;
     color: var(--font-color)
 }
 
