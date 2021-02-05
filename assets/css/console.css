@@ -1,29 +1,33 @@
 @font-face {
     font-family: 'Source Code Pro';
-    src: url('../font/SourceCodePro-Regular.ttf') format('truetype');
+    src: local("Source Code Pro Regular"), url('../font/SourceCodePro-Regular.ttf') format('truetype');
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Source Code Pro';
-    src: url('../font/SourceCodePro-Italic.ttf') format('truetype');
+    src: local("Source Code Pro Italic"), url('../font/SourceCodePro-Italic.ttf') format('truetype');
     font-style: italic;
     font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Source Code Pro';
-    src: url('../font/SourceCodePro-Bold.ttf') format('truetype');
+    src: local("Source Code Pro Bold"), url('../font/SourceCodePro-Bold.ttf') format('truetype');
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Source Code Pro';
-    src: url('../font/SourceCodePro-BoldItalic.ttf') format('truetype');
+    src: local("Source Code Pro Bold Italic"), url('../font/SourceCodePro-BoldItalic.ttf') format('truetype');
     font-style: italic;
     font-weight: 700;
+    font-display: swap;
 }
 
 .highlight pre {
@@ -220,6 +224,10 @@ h1::after {
 
 .active a {
     text-decoration: underline;
+}
+
+ul ul {
+    margin-bottom: 10px;
 }
 
 strong {
