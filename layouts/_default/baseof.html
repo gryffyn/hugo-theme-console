@@ -8,10 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
-    {{ $css := resources.Get "css/terminal-0.7.2.min.css" }}
-    {{ $style := $css | resources.Minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink | absURL }}" integrity="{{ $style.Data.Integrity }}">
-    {{ $css := resources.Get "css/syntax.css" }}
+    {{ $css := resources.Get "css/terminal-0.7.2.css" }}
     {{ $style := $css | resources.Minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink | absURL }}" integrity="{{ $style.Data.Integrity }}">
     {{ $css := resources.Get "css/console.css" }}
@@ -52,10 +49,13 @@
         </div>
     </div>
 
-    <div class="container" >
+    <div class="container">
         {{ block "main" . }}
         {{ end }}
         {{ partial "footer.html" . }}
     </div>
   </body>
+{{ $css := resources.Get "css/syntax.css" }}
+{{ $style := $css | resources.Minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink | absURL }}" integrity="{{ $style.Data.Integrity }}">
 </html>

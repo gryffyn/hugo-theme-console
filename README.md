@@ -33,3 +33,5 @@ The theme is released under the MIT License.
 Check the [original theme license](https://github.com/mrmierzejewski/hugo-theme-console/blob/master/LICENSE) for additional licensing information.
 
 Some elements from [PaperMod](https://github.com/adityatelange/hugo-PaperMod), copyright [adityatelange](https://github.com/adityatelange)
+
+Uses modified [Terminal.css](https://github.com/Gioni06/terminal.css)

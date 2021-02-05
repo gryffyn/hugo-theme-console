@@ -30,12 +30,20 @@
     font-display: swap;
 }
 
-.highlight pre {
-    margin: 0;
-}
-
 .post-content li p {
     margin: var(--global-line-height) 0 0;
+}
+
+img {
+    width: auto;
+}
+
+.terminal-card > header {
+    background-color: #2c2e31;
+}
+
+.terminal-card {
+    border: revert;
 }
 
 pre {
