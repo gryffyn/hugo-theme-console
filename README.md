@@ -1,20 +1,13 @@
-# Hugo Theme: Console
+# Hugo Theme: Console-Dark
 
-A minimal, responsive and light theme for Hugo inspired by Linux console. 
-
-![Console](https://github.com/mrmierzejewski/hugo-theme-console/blob/master/images/preview.png?raw=true)
-
-## Live demo
-
-* https://mrmierzejewski.com
-* https://themes.gohugo.io/theme/hugo-theme-console/
+A minimal, responsive and light theme for Hugo inspired by Linux console, now with grey and pink! Fork of [hugo-theme-console](https://github.com/mrmierzejewski/hugo-theme-console).
 
 ## Installation
 
 ```sh
 $ mkdir themes
 $ cd themes
-$ git submodule add https://github.com/mrmierzejewski/hugo-theme-console.git hugo-theme-console
+$ git submodule add https://github.com/gryffyn/hugo-theme-console-dark.git hugo-theme-console-dark
 ```
     
 See the [Hugo documentation](https://gohugo.io/themes/installing/) for more information.
@@ -24,15 +17,7 @@ See the [Hugo documentation](https://gohugo.io/themes/installing/) for more info
 Set theme parameter in your config file:
 
 ```
-theme = "hugo-theme-console"
-```
-
-## Example Site
-
-To run the example site, please type the following command:
-
-```
-makefile hugo-server
+theme: "hugo-theme-console-dark"
 ```
 
 ### Start page
@@ -42,6 +27,7 @@ your website top-level ```layouts``` folder (```layouts/index.html```).
 
 ## License
 
-Copyright © 2020 [Marcin Mierzejewski](https://mrmierzejewski.com/)
+Copyright © 2021 [gryffyn](https://github.com/gryffyn)
 
-The theme is released under the MIT License. Check the [original theme license](https://github.com/panr/hugo-theme-terminal/blob/master/LICENSE.md) for additional licensing information.
+The theme is released under the MIT License.  
+Check the [original theme license](https://github.com/mrmierzejewski/hugo-theme-console/blob/master/LICENSE) for additional licensing information.
