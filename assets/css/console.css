@@ -30,6 +30,10 @@
     margin: 0;
 }
 
+.post-content li p {
+    margin: var(--global-line-height) 0 0;
+}
+
 pre {
     border:0;
     padding-bottom: 0;
@@ -147,8 +151,23 @@ h1 {
     font-size: 36px;
 }
 
+.details {
+    display: inline-block;
+    color: var(--secondary-color);
+    margin-top: 10px;
+}
+
+::marker {
+    color: var(--primary-color)
+}
+
+.post-content {
+    margin-top: 12px;
+}
+
 .post-content h1 {
-    font-size: 32px;
+    font-size: 28px;
+    text-decoration: none;
 }
 
 .post-content h1 a,
@@ -313,14 +332,16 @@ figure {
     .posts-list .date {
         display: inline-block;
         position: absolute;
-        left: 0px;
+        left: 0;
         width: 120px;
         z-index: 400;
         font-weight: bold;
         padding-top: 3px;
-        display: none;
     }
 
+    .post-title {
+        margin-top: -18px;
+    }
 
     .footer {
         margin-top: 50px;

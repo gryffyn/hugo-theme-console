@@ -9,7 +9,18 @@
     {{ . }}
     {{ end }}
 </div>
-</br>
+{{- if (.Param "ShowToc") }}
+<div class="toc">
+    <details {{if (.Param "TocOpen") }} open{{ end }}>
+    <summary accesskey="c" title="(Alt + C)">
+        <div class="details">{{- i18n "toc" | default "Table of Contents" }}</div>
+    </summary>
+    <div class="inner">
+        {{- partial "toc.html" . }}
+    </div>
+    </details>
+</div>
+{{- end }}
 <div class="post-content">
     {{ partial "anchored_headings" .Content }}
 </div>
