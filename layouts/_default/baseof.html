@@ -9,6 +9,7 @@
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="author" content="{{ (partial "author.html" . ) }}">
+    <link rel="preload" href="font/SourceCodePro-Bold.ttf" as="font" crossorigin="anonymous">
     <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}" />
     {{ $css := resources.Get "css/terminal-0.7.2.css" }}
     {{ $style := $css | resources.Minify | fingerprint }}
