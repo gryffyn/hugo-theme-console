@@ -347,7 +347,7 @@ figure {
 
     .posts-list .date {
         display: inline-block;
-        position: absolute;
+        position: relative;
         left: 0;
         width: 120px;
         z-index: 400;
