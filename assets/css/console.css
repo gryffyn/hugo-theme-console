@@ -159,6 +159,12 @@ h1 {
     flex-basis: 60em;
 }
 
+.main-content figure img {
+    max-width: 40%;
+    float: right;
+    margin: 10px 10px 0 10px;
+}
+
 .post-title h1 {
     font-size: 36px;
 }
