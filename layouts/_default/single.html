@@ -5,6 +5,15 @@
         {{- if .Draft }}<div class="entry-isdraft"><sup>&nbsp;&nbsp;[draft]</sup></div>{{- end }}
     </h1>
 </div>
+{{- if .Params }}
+<div class="main-meta">
+    {{ .PublishDate.Format "Jan. 2, 2006" }}
+    {{ with .Params.Description }}
+    <span style="color: var(--primary-color);font-weight: bold">//</span>
+    {{ . }}
+    {{ end }}
+</div>
+{{- end }}
 {{- if .Description }}
 <div class="main-description">
     {{ .Description }}
