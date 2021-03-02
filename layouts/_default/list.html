@@ -10,7 +10,7 @@
         <div class="post">
             <p>
                 <div class="date">{{ .PublishDate.Format "2006-02-01" }}</div>
-                <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
+                <h1>{{- if .Draft }}<div class="entry-isdraft"><sup>&nbsp;&nbsp;[draft]</sup></div>{{- end }}<a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
                 {{ .Description }}
             </p>
         </div>

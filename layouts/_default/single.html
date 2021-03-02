@@ -1,16 +1,16 @@
 {{ define "main" }}
-<div class="post-title">
+<div class="main-title">
     <h1>
         {{ .Title }}
         {{- if .Draft }}<div class="entry-isdraft"><sup>&nbsp;&nbsp;[draft]</sup></div>{{- end }}
     </h1>
 </div>
 {{- if .Description }}
-<div class="post-description">
+<div class="main-description">
     {{ .Description }}
 </div>
 {{- end }}
-<div class="post-content">
+<div class="main-content">
     {{ .Content }}
 </div>
 {{ end }}
